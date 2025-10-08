@@ -1,0 +1,19 @@
+C:\Users\jaime.sanson\source\repos\NX AI\NX AI\obj\Debug\net8.0-windows\NX_AI.Form1.resources
+C:\Users\jaime.sanson\source\repos\NX AI\NX AI\obj\Debug\net8.0-windows\NX AI.csproj.GenerateResource.cache
+C:\Users\jaime.sanson\source\repos\NX AI\NX AI\obj\Debug\net8.0-windows\NX AI.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\jaime.sanson\source\repos\NX AI\NX AI\obj\Debug\net8.0-windows\NX AI.AssemblyInfoInputs.cache
+C:\Users\jaime.sanson\source\repos\NX AI\NX AI\obj\Debug\net8.0-windows\NX AI.AssemblyInfo.cs
+C:\Users\jaime.sanson\source\repos\NX AI\NX AI\obj\Debug\net8.0-windows\NX AI.csproj.CoreCompileInputs.cache
+C:\Users\jaime.sanson\source\repos\NX AI\NX AI\bin\Debug\net8.0-windows\NX AI.exe
+C:\Users\jaime.sanson\source\repos\NX AI\NX AI\bin\Debug\net8.0-windows\NX AI.deps.json
+C:\Users\jaime.sanson\source\repos\NX AI\NX AI\bin\Debug\net8.0-windows\NX AI.runtimeconfig.json
+C:\Users\jaime.sanson\source\repos\NX AI\NX AI\bin\Debug\net8.0-windows\NX AI.dll
+C:\Users\jaime.sanson\source\repos\NX AI\NX AI\bin\Debug\net8.0-windows\NX AI.pdb
+C:\Users\jaime.sanson\source\repos\NX AI\NX AI\obj\Debug\net8.0-windows\NX AI.dll
+C:\Users\jaime.sanson\source\repos\NX AI\NX AI\obj\Debug\net8.0-windows\refint\NX AI.dll
+C:\Users\jaime.sanson\source\repos\NX AI\NX AI\obj\Debug\net8.0-windows\NX AI.pdb
+C:\Users\jaime.sanson\source\repos\NX AI\NX AI\obj\Debug\net8.0-windows\NX AI.genruntimeconfig.cache
+C:\Users\jaime.sanson\source\repos\NX AI\NX AI\obj\Debug\net8.0-windows\ref\NX AI.dll
+C:\Users\jaime.sanson\source\repos\NX AI\NX AI\obj\Debug\net8.0-windows\NX AI.csproj.AssemblyReference.cache
+C:\Users\jaime.sanson\source\repos\NX AI\NX AI\bin\Debug\net8.0-windows\Newtonsoft.Json.dll
+C:\Users\jaime.sanson\source\repos\NX AI\NX AI\obj\Debug\net8.0-windows\NX AI.csproj.Up2Date
