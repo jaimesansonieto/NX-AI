@@ -53,10 +53,9 @@ namespace NX_AI
 
         private async void BtnEnviar_Click(object sender, EventArgs e)
         {
-
+            btnEnviar.Enabled = false;
             string pregunta = txtPregunta.Text;
             string respuesta = await ObtenerRespuestaDeIA(pregunta);
-            btnEnviar.Enabled = false;
 
             // Limpiar contenido anterior
             //txtRespuesta.Clear();
@@ -73,7 +72,7 @@ namespace NX_AI
             // Respuesta en negrita
             txtRespuesta.SelectionFont = new Font(txtRespuesta.Font, FontStyle.Bold);
             txtRespuesta.AppendText(respuesta + "\r\n");
-            btnEnviar.Enabled = false;
+            btnEnviar.Enabled = true;
 
         }
 
