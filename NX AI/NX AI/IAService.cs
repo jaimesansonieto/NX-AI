@@ -22,8 +22,7 @@ namespace NX_AI
         // 🔹 Función que lee el archivo de reglas
         private string CargarReglas()
         {
-            string rutaArchivo = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "reglas.txt");
-
+            string rutaArchivo = Path.Combine(Path.GetDirectoryName(Path.GetDirectoryName(Path.GetDirectoryName(Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location)))), "reglas.txt");
             if (File.Exists(rutaArchivo))
             {
                 return File.ReadAllText(rutaArchivo);
