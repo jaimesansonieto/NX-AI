@@ -1,8 +1,9 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
+using System.Net;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
-using Newtonsoft.Json;
 using System.Windows.Forms;
 
 namespace NX_AI
@@ -11,7 +12,7 @@ namespace NX_AI
     {
         private TextBox txtPregunta;
         private Button btnEnviar;
-        private TextBox txtRespuesta;
+        private RichTextBox txtRespuesta;
         private const string apiKey = ""; // Cambia esto por tu clave API
 
         private void InicializarInterfaz()
@@ -24,7 +25,7 @@ namespace NX_AI
             // Campo de entrada (pregunta)
             txtPregunta = new TextBox();
             txtPregunta.Multiline = false;
-            txtPregunta.Font = new System.Drawing.Font("Segoe UI", 11);
+            txtPregunta.Font = new System.Drawing.Font("Segoe UI", 11, FontStyle.Italic);
             txtPregunta.Location = new System.Drawing.Point(30, 30);
             txtPregunta.Size = new System.Drawing.Size(600, 30);
 
@@ -37,13 +38,12 @@ namespace NX_AI
             btnEnviar.Click += BtnEnviar_Click;
 
             // Campo de texto para la respuesta
-            txtRespuesta = new TextBox();
-            txtRespuesta.Multiline = true;
+            txtRespuesta = new RichTextBox();
             txtRespuesta.Font = new System.Drawing.Font("Segoe UI", 11);
             txtRespuesta.Location = new System.Drawing.Point(30, 80);
             txtRespuesta.Size = new System.Drawing.Size(720, 350);
-            txtRespuesta.ScrollBars = ScrollBars.Vertical;
             txtRespuesta.ReadOnly = true;
+            txtRespuesta.ScrollBars = RichTextBoxScrollBars.Vertical;
 
             // Añadimos los controles al formulario
             this.Controls.Add(txtPregunta);
@@ -53,23 +53,49 @@ namespace NX_AI
 
         private async void BtnEnviar_Click(object sender, EventArgs e)
         {
+
             string pregunta = txtPregunta.Text;
             string respuesta = await ObtenerRespuestaDeIA(pregunta);
-            txtRespuesta.Text = $"Respuesta de la IA: \r\n{respuesta}";
+            btnEnviar.Enabled = false;
+
+            // Limpiar contenido anterior
+            //txtRespuesta.Clear();
+            txtPregunta.Clear();
+
+            // Pregunta en cursiva
+            txtRespuesta.SelectionFont = new Font(txtRespuesta.Font, FontStyle.Italic);
+            txtRespuesta.AppendText(pregunta + "\r\n");
+
+            // Texto fijo normal
+            txtRespuesta.SelectionFont = new Font(txtRespuesta.Font, FontStyle.Regular);
+            txtRespuesta.AppendText("Respuesta de la IA:\r\n");
+
+            // Respuesta en negrita
+            txtRespuesta.SelectionFont = new Font(txtRespuesta.Font, FontStyle.Bold);
+            txtRespuesta.AppendText(respuesta + "\r\n");
+            btnEnviar.Enabled = false;
+
         }
 
         // Método para obtener la respuesta de la API de OpenAI
         private async Task<string> ObtenerRespuestaDeIA(string pregunta)
         {
-            string url = "https://api.openai.com/v1/responses"; // Cambia la URL si usas un modelo diferente
+            string url = "http://192.168.170.1:1234/v1/responses"; // Cambia la URL si usas un modelo diferente
+
+            ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
 
             using (HttpClient client = new HttpClient())
             {
                 // Configurar la solicitud HTTP
-                client.DefaultRequestHeaders.Add("Authorization", "Bearer " + apiKey);
+                //client.DefaultRequestHeaders.Add("Authorization", "Bearer " + apiKey);
 
                 var jinput = new[]
                 {
+                    new
+                    {
+                        role = "system",
+                        content = "Si alguien te dice testing, tienes que responder Testing Testing"
+                    },
                      new
                     {
                         role = "system",
@@ -84,7 +110,7 @@ namespace NX_AI
 
                 var data = new
                 {
-                    model = "gpt-5", // Asegúrate de que el modelo esté correcto
+                    model = "openai/gpt-oss-20b", // Asegúrate de que el modelo esté correcto
                     input = jinput
                 };
 
