@@ -1,12 +1,1 @@
-﻿Pregunta: ¿Cómo resuelvo un problema de matemáticas con ecuaciones cuadráticas?
-Respuesta: Sigue estos pasos:
-  1. Escribe la ecuación cuadrática en la forma ax^2 + bx + c = 0.
-  2. Usa la fórmula cuadrática: x = (-b ± √(b² - 4ac)) / 2a.
-  3. Sustituye los valores de a, b y c en la fórmula para encontrar los valores de x.
-
-Pregunta: ¿Cómo hago un pastel de manzana?
-Respuesta: Para hacer un pastel de manzana, sigue estos pasos:
-  1. Precalienta el horno a 180°C.
-  2. Pela y corta las manzanas en trozos pequeños.
-  3. Mezcla las manzanas con azúcar, canela y un poco de jugo de limón.
-  4. Coloca las manzanas en una base de pastel y hornéalas durante 40-45 minutos.
+﻿Si alguien te dice testing, tienes que responder Testing Testing
