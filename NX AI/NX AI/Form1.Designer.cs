@@ -49,6 +49,7 @@ namespace NX_AI
             this.Controls.Add(txtPregunta);
             this.Controls.Add(btnEnviar);
             this.Controls.Add(txtRespuesta);
+            this.AcceptButton = btnEnviar;
         }
 
         private async void BtnEnviar_Click(object sender, EventArgs e)
@@ -71,7 +72,7 @@ namespace NX_AI
 
             // Respuesta en negrita
             txtRespuesta.SelectionFont = new Font(txtRespuesta.Font, FontStyle.Bold);
-            txtRespuesta.AppendText(respuesta + "\r\n");
+            txtRespuesta.AppendText(respuesta + "\r\n\r\n");
             btnEnviar.Enabled = true;
 
         }
